@@ -1,0 +1,230 @@
+*{
+    margin: 0% auto;
+}
+
+body{
+    background: linear-gradient(to right, #d3cce3, #e9e4f0);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.caja1{
+    position: relative;
+    height: 600px;
+    width: 550px;
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+    float: left;
+    left: 200px;
+    top: 80px;
+    box-shadow: -10px 10px 30px;
+    
+}
+.caja2{
+    position: relative;
+    height: 600px;
+    width: 550px;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);;
+    float: left;
+    left: 200px;
+    top: 80px;
+    box-shadow: 10px 10px 30px;
+    text-align: center;
+}
+
+footer{
+    display: flex;
+    position: relative;
+    top: 720px;
+    right: 23em;
+    font-size: 20px;
+}
+.caja1 h2{
+    text-align: center;
+    padding-top: 10px;
+    
+    font-size: 40px;
+}
+
+.caja1 .miv{
+    max-width: 110%;
+    max-height: 110px;
+}
+
+nav{
+    padding-top: 20px;
+    position: relative;
+    text-align: center;
+    top: -60px;
+}
+
+nav .icon i{ 
+    text-align: center;
+    display: inline-block;
+    border: 2px solid #2193b0;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    margin: 40px 5px -5px;
+    line-height: 42px;
+    font-size: 20px;
+    transition: .3s;
+    cursor: pointer;
+}
+nav .icon i:hover{
+    border: 2px solid #fff;
+    border-radius: 100%;
+    color: #fff;
+    background: #2193b0;
+}
+
+.formulariolog{
+    position: relative;
+    top: -5px;
+    display: block;
+    float: left;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 90px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.formulariolog .correo{
+    text-decoration: none;
+    width: 380px;
+    padding: 15px;
+    border: 0;
+    background: #d4d4d4;
+}
+.olvido{
+    /* position: relative; */
+    top: 25px;
+    text-align: center;
+}
+.olvido a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.caja1 button{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 35%;
+    border-radius: 15px; 
+    border: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding: 10px 40px 10px 40px;
+    background-color: #2193b0;
+    color: white;
+    transition: .3s;
+}
+.caja1 button:hover{
+    background-color: #0c608d;
+    color: #fff;
+    cursor: pointer;
+}
+
+.caja2 h2{
+    font-size: 60px;
+    padding-top: 120px;
+    color: #fff;
+}
+.caja2 p{
+    font-size: 20px;
+    margin: 10px 20px 40px 30px;
+    color: #fff;
+}
+
+.caja2 button#registrar{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 35%;
+    border-radius: 15px; 
+    border: 2px solid #fff;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding: 10px 40px 10px 40px;
+    background-color: #2193b0;
+    color: white;
+    transition: .3s;
+}
+.caja2 button#registrar:hover{
+    border: 2px solid #2193b0;
+    background-color: #fff;
+    color: #2193b0;
+    cursor: pointer;
+}
+
+.caja2 #registrate h3{
+    display: flex;
+    margin-left: 170px;
+    margin-top: 50px;
+    font-size: 30px;
+    color: #fff;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+#registrate .regis{
+    margin: 0px;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 30px;
+    left: 20px;
+    display: flex;
+    
+}
+.formulariores{
+    position: relative;
+    top: -5px;
+    display: block;
+    float: left;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 60px;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.formulariores .correo{
+    margin: 10px;
+    margin-left: -35px;
+    text-decoration: none;
+    width: 380px;
+    padding: 13px;
+    border: 0;
+    background: #d4d4d4;
+}
+
+.caja2 button#registro{
+    display: flex;
+    margin-top: 50px;
+    margin-left: 35%;
+    border-radius: 15px; 
+    border: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding: 10px 40px 10px 40px;
+    background-color: #2193b0;
+    color: white;
+    transition: .3s;
+}
+.caja2 button#registro:hover{
+    background-color: #fff;
+    color: #2193b0;
+    cursor: pointer;
+}
+
+.caja2 p#version{
+    display: flex;
+    margin-top: 40px;
+    color: black;
+    position: relative;
+    left: 20em;
+    top: 1em;
+}
+
+.caja1 h2#sesion{
+    display: block;
+    margin-top: 130px;
+    height: auto;
+}
+

@@ -1,0 +1,14 @@
+.caja1 button#enviar{
+    margin: 0 auto;
+    background-color: #2193b0;
+    color: white;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 50px;
+    margin-left: 35%;
+    border-radius: 15px;
+    border: 0px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding: 10px 40px 10px 40px;
+} 
