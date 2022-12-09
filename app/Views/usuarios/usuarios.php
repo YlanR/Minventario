@@ -82,6 +82,9 @@
             <tbody>
            
             <?php foreach($usuarios as $usuario => $valor): ?>
+
+              <?php if($valor->type == 'Administrador' OR $valor->type == 'Despacho'){ ?>
+
                     <tr class="text-center">
      
                         <td> <?=($usuario+1)?></td>
@@ -98,7 +101,24 @@
                         
                       </td>
                     </tr>
-                
+                    <?php } else if(session('type') == 'Tecnico') {?>
+                      <tr class="text-center">
+     
+                            <td> <?=($usuario+1)?></td>
+                            <td> <?=$valor->nombre?></td>
+                            <td> <?=$valor->usuario?></td>
+                            <td> <?=$valor->email?></td>
+                            <td> <?=$valor->type?></td>
+                            <td> <?=$valor->fecha?></td>
+                            <td class="text-center">
+
+                            <a href="<?=base_url()?>/obtenerusuario/<?=$valor->id_usuario?>"><button class="btn text-primary px-1" ><i class="fas fa-pencil-alt fs-5"></i></button></a>
+                            <a href="<?=base_url()?>/eliminarUsuario/<?=$valor->id_usuario?>" onclick="return eliminar()"><button class="btn text-danger px-1"><i class="fas fa-trash fs-5"></i></button>
+                            
+                            
+                          </td>
+                        </tr>
+                    <?php } ?>
 
                 <?php endforeach; ?>
            

@@ -67,6 +67,7 @@
                         
                 </div>
 
+                <?php if(session('type') == 'Tecnico'){ ?>
                 <label for="precio">Perfil <span class="text-danger">*</span></label>
                 <div class="input-group mb-3 ">
                     <div class="input-group-prepend ">
@@ -80,6 +81,14 @@
                   </select>
                         
                 </div>
+                <?php } else {?>
+
+                  <div class="input-group ">
+                <input type="hidden" class="form-control" name="type" placeholder="precio" value="Despacho" >      
+                </div>
+
+
+                <?php }?>
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-info">Guardar</button>

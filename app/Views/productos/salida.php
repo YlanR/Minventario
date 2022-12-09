@@ -61,6 +61,8 @@ $precio = $datos[0]['precio'];
                 <h5><span class="text-primary">Stock:</span> <?=$stock?> Und(s)</h5>
                 <h5><span class="text-danger">Precio:</span> <?=$precio?>$</h5>
 
+                <br>
+
                 <label for="stock">Disminuir Stock <span class="text-danger">*</span></label>
                 <div class="input-group mb-3 ">
                     <div class="input-group-prepend ">
@@ -77,6 +79,36 @@ $precio = $datos[0]['precio'];
                 <div class="input-group ">
                 <input type="hidden" class="form-control" name="stocksalida" placeholder="Stock" value="<?=$stock?>" >      
                 </div>
+                <br>
+
+                <h5><span class="text-primary">Motivos de Salida del Stock</h5>
+                  <div class="col-sm-6"> 
+                  <div class="form-group d-flex m-4 ">
+
+                          <div class="custom-control custom-radio">
+                            <input class="custom-control-input" type="radio" id="salidaproducto" value="Venta" name="motivo" checked required>
+                            <label for="salidaproducto" class="custom-control-label">Venta del Producto</label>
+                          </div>
+
+                          <?php if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ ?>
+                          <div class="custom-control custom-radio">
+                            <input class="custom-control-input custom-control-input-danger" type="radio" id="vencidoproducto" value="Vencido" name="motivo" required>
+                            <label for="vencidoproducto" class="custom-control-label">Producto Vencido</label>
+                          </div>
+
+                          <div class="custom-control custom-radio">
+                            <input class="custom-control-input custom-control-input-danger" type="radio" id="extraproducto" value="Extraviado" name="motivo" required>
+                            <label for="extraproducto" class="custom-control-label">Producto Extraviado</label>
+                          </div>
+
+                          <div class="custom-control custom-radio">
+                            <input class="custom-control-input custom-control-input-danger" type="radio" id="motivosproducto" value="Otro" name="motivo" required>
+                            <label for="motivosproducto" class="custom-control-label">Otros motivos..</label>
+                          </div>
+                          <?php } ?>
+                    </div>
+                  </div>
+              
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-info">Guardar</button>

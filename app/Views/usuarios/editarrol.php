@@ -50,6 +50,7 @@ $type      = $datos[0]['type'];
                     <option value="">Seleccione un nuevo Perfil</option>
                     <option value="Despacho">Despacho</option>
                     <option value="Administrador">Administrador</option>
+                    <option value="Tecnico">Tecnico</option>
                     
                   </select>
                         

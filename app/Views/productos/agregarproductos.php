@@ -76,7 +76,7 @@
                     <div class="input-group-prepend ">
                         <span class="input-group-text"><i class="ion ion-ios-cart"></i></span>
                     </div>
-                        <input type="number" class="form-control" name="compra" placeholder="Valor">
+                        <input step="any"  type="number" class="form-control" name="compra" placeholder="Valor">
                         
                 </div>
 
@@ -94,7 +94,7 @@
                     <div class="input-group-prepend ">
                         <span class="input-group-text"><i class="ion ion-cash"></i></span>
                     </div>
-                        <input type="number" class="form-control" name="precio" placeholder="Precio">
+                        <input step="any" type="number" class="form-control" name="precio" placeholder="Precio">
                         
                 </div>
 

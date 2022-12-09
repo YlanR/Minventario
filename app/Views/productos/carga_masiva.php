@@ -88,7 +88,7 @@
 
             <?php } else { ?>
             <thead class="card-info text-center"  style="background: #17a2b8; color: #ffff">
-              <tr  class="text-right">
+              <tr >
               <th>#</th>
                   <th>Categoria</th>
                   <th>Codigo</th>
@@ -110,13 +110,13 @@
                         <td> <?=$valore->codigo?></td>
                         <td> <?=$valore->descripcion?></td>
                         <td> <?=$valore->compra?></td>
-                        <td> <?=$valore->stock?></td>
+                        <td> <?=$valore->stock?> Und(s)</td>
                         <td> <?=$valore->precio?></td>
                         <td class="text-center">
-                        <?php if(session('type') == 'Administrador'){ ?> <a href="<?=base_url()?>/obtenerproducto/<?=$valore->id?>"><button class="btn text-primary px-1" ><i class="fas fa-pencil-alt fs-5"></i></button></a><?php } ?>
+                        <?php if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ ?> <a href="<?=base_url()?>/obtenerproducto/<?=$valore->id?>"><button class="btn text-primary px-1" ><i class="fas fa-pencil-alt fs-5"></i></button></a><?php } ?>
                        <a href="<?=base_url()?>/entrada/<?=$valore->id?>"><button class="btn text-success px-1" ><i class="fas fa-plus-circle"></i></button></a>
                        <?php if($valore->stock > 0){ ?> <a href="<?=base_url()?>/salida/<?=$valore->id?>"><button class="btn text-warning px-1" ><i class="fas fa-minus-circle"></i></button></a><?php } else { ?><button class="btn text-muted px-1" ><i class="fas fa-minus-circle"></i></button><?php } ?>
-                       <?php if(session('type') == 'Administrador'){ ?><a href="<?=base_url()?>/eliminarproducto/<?=$valore->id?>" data-id="<?=$valore->id?>" onclick="return eliminar()" id="delete"><button class="btn text-danger px-1"><i class="fas fa-trash fs-5"></i></button><?php } ?>
+                       <?php if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ ?><a href="<?=base_url()?>/eliminarproducto/<?=$valore->id?>" data-id="<?=$valore->id?>" onclick="return eliminar()" id="delete"><button class="btn text-danger px-1"><i class="fas fa-trash fs-5"></i></button><?php } ?>
 
                       </td>
                     </tr>
@@ -132,13 +132,13 @@
                         <td> <?=$valor->codigo?></td>
                         <td> <?=$valor->descripcion?></td>
                         <td> <?=$valor->compra?>$</td>
-                        <td> <?=$valor->stock?></td>
+                        <td> <?=$valor->stock?> Und(s)</td>
                         <td> <?=$valor->precio?>$</td>
                         <td class="text-center">
-                        <?php if(session('type') == 'Administrador'){ ?> <a href="<?=base_url()?>/obtenerproducto/<?=$valor->id?>"><button class="btn text-primary px-1" ><i class="fas fa-pencil-alt fs-5"></i></button></a><?php } ?>
+                        <?php if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ ?> <a href="<?=base_url()?>/obtenerproducto/<?=$valor->id?>"><button class="btn text-primary px-1" ><i class="fas fa-pencil-alt fs-5"></i></button></a><?php } ?>
                        <a href="<?=base_url()?>/entrada/<?=$valor->id?>"><button class="btn text-success px-1" ><i class="fas fa-plus-circle"></i></button></a>
                        <?php if($valor->stock > 0){ ?> <a href="<?=base_url()?>/salida/<?=$valor->id?>"><button class="btn text-warning px-1" ><i class="fas fa-minus-circle"></i></button></a><?php } else { ?><button class="btn text-muted px-1" ><i class="fas fa-minus-circle"></i></button><?php } ?>
-                       <?php if(session('type') == 'Administrador'){ ?><a href="<?=base_url()?>/eliminarproducto/<?=$valor->id?>" data-id="<?=$valor->id?>" onclick="return eliminar()" id="delete"><button class="btn text-danger px-1"><i class="fas fa-trash fs-5"></i></button><?php } ?>
+                       <?php if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ ?><a href="<?=base_url()?>/eliminarproducto/<?=$valor->id?>" data-id="<?=$valor->id?>" onclick="return eliminar()" id="delete"><button class="btn text-danger px-1"><i class="fas fa-trash fs-5"></i></button><?php } ?>
 
                       </td>
                       
@@ -154,6 +154,8 @@
           </div>
         
       </div>
+      </div>
+      
        
        
       </div><!-- /.container-fluid -->

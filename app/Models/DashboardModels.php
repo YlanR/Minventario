@@ -11,7 +11,7 @@ class DashboardModels extends Model{
     }
 
     public function Salidas(){
-        $entradas = $this->db->query('SELECT ventat FROM salidasp');
+        $entradas = $this->db->query('SELECT ventat FROM salidasp')->limit('4');
         
         return $entradas->getResult();
     }
@@ -31,7 +31,7 @@ class DashboardModels extends Model{
         $buscar->groupBy(['b.codigo', 'b.descripcion']);
         $buscar->select('b.descripcion');
         $buscar->orderBy('ventat', 'DESC');
-        $buscar->limit('10');
+        $buscar->limit('5');
         $resultado = $buscar->get();
  
          return $resultado->getResult();

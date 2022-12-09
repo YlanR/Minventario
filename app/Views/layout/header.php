@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <li class="nav-item d-none d-sm-inline-block">
         <a href="<?=base_url()?>/inventario" class="nav-link">Inventario</a>
       </li>
-      <?php if(session('type') == 'Administrador'){ ?>
+      <?php if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ ?>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="<?=base_url()?>/usuarios" class="nav-link">Usuarios</a>
       </li>
@@ -101,6 +101,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <li class="nav-item d-none d-sm-inline-block">
         <a href="<?=base_url()?>/ventas" class="nav-link">Ventas</a>
       </li>
+
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="<?=base_url()?>/merma" class="nav-link">Merma de Productos</a>
+      </li>
+
 
     </ul>
 

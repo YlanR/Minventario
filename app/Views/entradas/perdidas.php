@@ -12,24 +12,22 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Compra de Productos</h1>
+            <h1 class="m-0">Merma de Productos</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="<?=base_url()?>/inicio">Inicio</a></li>
-              <li class="breadcrumb-item active">Compra de Productos</li>
+              <li class="breadcrumb-item active">Merma de Productos</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
+    
     <!-- Main content -->
     <div class="content">
       <div class="container-fluid">
-      
-        <!-- Row para criterios de busqueda -->
         
        
       <div class="row ">
@@ -42,8 +40,9 @@
                     <th>Codigo</th>
                     <th>Descripcion</th>
                     <th>Categoria</th>
-                    <th>Compra Total</th>
-                    <th>Entradas</th>
+                    <th>Venta Total</th>
+                    <th>Estado</th>
+                    <th>Salidas</th>
                     <th>Fecha</th>
               <?php if(session('type') == 'Tecnico'){ ?><th>Opciones</th><?php } ?>
 
@@ -51,24 +50,26 @@
             </thead>
             <tbody>
            
-            <?php foreach($entradas as $entrada => $valor): ?>
+            <?php foreach($motivos as $motivo => $valor): ?>
           
-            <tr class="text-center">
-              <td><?=($entrada+1)?></td>
-              <td><?=$valor->codigo?></td>
-              <td><?=$valor->descripcion?></td>
-              <td><?=$valor->categorias?></td>
-              <td><?=$valor->compra?>$</td>
-              <td><?=$valor->stock?> Und(s)</td>
-              <td><?=$valor->fecha?></td>
+        
+
+          <tr class="text-center">
+            <td><?=($motivo+1)?></td>
+            <td><?=$valor->codigo?></td>
+            <td><?=$valor->descripcion?></td>
+            <td><?=$valor->categorias?></td>
+            <td><?=$valor->ventat?>$</td>
+            <td><?=$valor->motivo?></td>
+            <td><?=$valor->salida?> Und(s)</td>
+            <td><?=$valor->fecha?></td>
             <?php if(session('type') == 'Tecnico'){ ?><td> <a href="<?=base_url()?>/eliminarproducto/<?=$valor->id?>" data-id="<?=$valor->id?>" onclick="return eliminar()" id="delete"><button class="btn text-danger px-1"><i class="fas fa-trash fs-5"></i></button></td><?php } ?>
 
+          </tr>
 
+        
 
-            </tr>
-
-            <?php endforeach; ?>
-
+          <?php endforeach; ?>
             </tbody>
             <tfoot class="text-center">
                     <tr>
@@ -76,12 +77,12 @@
                       <th>Codigo</th>
                       <th>Descripcion</th>
                       <th>Categoria</th>
-                      <th>Compra Total</th>
-                      <th>Entradas</th>
+                      <th>Venta Total</th>
+                      <th>Estado</th>
+                      <th>Salidas</th>
                       <th>Fecha</th>
               <?php if(session('type') == 'Tecnico'){ ?><th>Opciones</th><?php } ?>
 
-                      
                     </tr>
                     </tfoot>
           </table>
@@ -94,4 +95,5 @@
     <!-- /.content -->
     </div>
 
-    
+   
+

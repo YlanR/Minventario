@@ -1,6 +1,13 @@
 <!-- Content Header (Page header) -->
 <div class="content-wrapper">
 <div class="content-header">
+<script>
+        function eliminar(){
+            var respuesta = confirm("Estas seguro que deseas eliminar?");
+            return respuesta
+        }
+        
+    </script>
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -35,6 +42,8 @@
                     <th>Venta Total</th>
                     <th>Salidas</th>
                     <th>Fecha</th>
+                    <?php if(session('type') == 'Tecnico'){ ?><th>Opciones</th><?php } ?>
+
                 </tr>
             </thead>
             <tbody>
@@ -49,6 +58,8 @@
             <td><?=$valor->ventat?>$</td>
             <td><?=$valor->salida?> Und(s)</td>
             <td><?=$valor->fecha?></td>
+            <?php if(session('type') == 'Tecnico'){ ?><td> <a href="<?=base_url()?>/eliminarproducto/<?=$valor->id?>" data-id="<?=$valor->id?>" onclick="return eliminar()" id="delete"><button class="btn text-danger px-1"><i class="fas fa-trash fs-5"></i></button></td><?php } ?>
+
           </tr>
 
           <?php endforeach; ?>
@@ -62,6 +73,8 @@
                       <th>Venta Total</th>
                       <th>Salidas</th>
                       <th>Fecha</th>
+                    <?php if(session('type') == 'Tecnico'){ ?><th>Opciones</th><?php } ?>
+
                     </tr>
                     </tfoot>
           </table>

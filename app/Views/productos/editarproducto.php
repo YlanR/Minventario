@@ -85,7 +85,7 @@ $precio      = $datos[0]['precio'];
                     <div class="input-group-prepend ">
                         <span class="input-group-text"><i class="ion ion-ios-cart"></i></span>
                     </div>
-                        <input type="number" class="form-control" name="compra" value="<?=$compra?>">
+                        <input step="any" type="number" class="form-control" name="compra" value="<?=$compra?>">
                         
                 </div>
 
@@ -103,7 +103,7 @@ $precio      = $datos[0]['precio'];
                     <div class="input-group-prepend ">
                         <span class="input-group-text"><i class="ion ion-cash"></i></span>
                     </div>
-                        <input type="number" class="form-control" name="precio" placeholder="Precio" value="<?=$precio?>">
+                        <input step="any" type="number" class="form-control" name="precio" placeholder="Precio" value="<?=$precio?>">
                         
                 </div>
 

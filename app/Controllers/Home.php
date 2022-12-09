@@ -6,6 +6,7 @@ use App\Models\UsuariosModels;
 use App\Models\ProductosModels;
 use App\Models\DashboardModels;
 use App\Models\SalidasModels;
+use App\Models\PerdidasModels;
 
 class Home extends BaseController
 {
@@ -24,15 +25,19 @@ class Home extends BaseController
         $productos = new ProductosModels;
         $entradas = new DashboardModels;
         $salidas = new SalidasModels;
+        $merma = new PerdidasModels;
+
 
         $mensaje = session('mensaje');
+        
 
 
 
         $data = array("productos" => $productos->getProductos(),
-                    "entradas" => $entradas->Entradas(),
-                    "salidas" => $entradas->ProductoMasVendido(),
-                    "mensaje"  =>$mensaje);
+                    "entradas"    => $entradas->Entradas(),
+                    "salidas"     => $entradas->ProductoMasVendido(),
+                    "merma"       => $merma->getPerdidas(),
+                    "mensaje"     =>$mensaje);
 
         
 

@@ -1,6 +1,14 @@
 <!-- Content Header (Page header) -->
 <div class="content-wrapper">
 <div class="content-header">
+<script>
+        function eliminar(){
+            var respuesta = confirm("Estas seguro que deseas eliminar?");
+            return respuesta
+        }
+        
+    </script>
+
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -75,6 +83,7 @@
                     <th>Categorias</th>
                     <th>Stock</th>
                     <th>Fecha</th>
+                    <?php if(session('type') == 'Tecnico'){ ?><th>Opciones</th><?php } ?>
                     </tr>
                     </thead>
 
@@ -88,8 +97,9 @@
                         <td> <?=($llave+1)?></td>
                         <td> <?=$valore->codigo?></td>
                         <td> <?=$valore->descripcion?></td>
-                        <td> <?=$valore->stock?></td>
+                        <td> <?=$valore->stock?> Und(s)</td>
                         <td> <?=$valore->fecha?></td>
+                        <?php if(session('type') == 'Tecnico'){ ?><td> <a href="<?=base_url()?>/eliminarproducto/<?=$valore->id?>" data-id="<?=$valore->id?>" onclick="return eliminar()" id="delete"><button class="btn text-danger px-1"><i class="fas fa-trash fs-5"></i></button></td><?php } ?>
                         <?php endforeach; ?>
 
                     <?php } else  {?>
@@ -101,8 +111,10 @@
                         <td> <?=$valor->codigo?></td>
                         <td> <?=$valor->descripcion?></td>
                         <td> <?=$valor->categorias?></td>
-                        <td> <?=$valor->stock?></td>
+                        <td> <?=$valor->stock?> Und(s)</td>
                         <td> <?=$valor->fecha?></td>
+                        <?php if(session('type') == 'Tecnico'){ ?><td> <a href="<?=base_url()?>/eliminarproducto/<?=$valor->id?>" data-id="<?=$valor->id?>" onclick="return eliminar()" id="delete"><button class="btn text-danger px-1"><i class="fas fa-trash fs-5"></i></button></td><?php } ?>
+
                         
                       <?php endif; ?>    
                     </tr>
@@ -119,11 +131,9 @@
                     </tfoot>
                   </table>
 
-              
-              </div>
-              <!-- /.card -->
-          </div>
-          <!-- /.col -->
+                  
+             
+       
         </div>
         <!-- /.row -->
       </div>
@@ -131,10 +141,5 @@
  
     <!-- /.content -->
   </div>
-      
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-    </div>
-
+    
  

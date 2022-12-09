@@ -44,7 +44,7 @@
                     </a>
                 </li>
 
-                <?php if(session('type') == 'Administrador'){ ?>
+                <?php if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ ?>
 
                   <li class="nav-item">
                 <a href="" class="nav-link ">
@@ -62,12 +62,14 @@
                     </a>
                   </li>
                   
+                  <?php if(session('type') == 'Tecnico'){ ?>
                   <li class="nav-item">
                     <a href="<?=base_url()?>/roles" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Perfiles</p>
                     </a>
                   </li>
+                  <?php } ?>
 
                 </ul>
               </li>
@@ -97,7 +99,7 @@
                     </a>
                   </li>
 
-                  <?php if(session('type') == 'Administrador'){ ?>
+                  <?php if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ ?>
                   <li class="nav-item">
                     <a href="<?=base_url()?>/categorias" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
@@ -105,9 +107,20 @@
                     </a>
                   </li>
                   <?php } ?>
+ 
+                
 
                 </ul>
               </li>
+
+              <li class="nav-item">
+                    <a href="<?=base_url()?>/merma" class="nav-link">
+                      <i class="ion ion-android-remove-circle nav-icon"></i>
+                      <p>
+                        Merma de Productos
+                      </p>
+                    </a>
+                  </li>
 
               <li class="nav-item">
                     <a href="<?=base_url()?>/compras" class="nav-link">

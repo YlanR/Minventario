@@ -18,7 +18,7 @@ class Usuarios extends BaseController{
                  );
 
 
-         if(session('type') == 'Administrador'){ 
+         if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ 
         echo view("layout/header");
         echo view("layout/aside");
         echo view("usuarios/usuarios", $data);
@@ -39,7 +39,7 @@ class Usuarios extends BaseController{
         "mensaje" => $mensaje
         );
 
-        if(session('type') == 'Administrador'){ 
+        if(session('type') == 'Tecnico'){ 
         echo view("layout/header");
         echo view("layout/aside");
         echo view("usuarios/roles", $data);
@@ -60,7 +60,7 @@ class Usuarios extends BaseController{
         $datos = ["datos" => $respuesta,
         "mensaje"  => $mensaje];
 
-        if(session('type') == 'Administrador'){ 
+        if(session('type') == 'Tecnico'){ 
 
         echo view("layout/header");
         echo view("layout/aside");
@@ -126,7 +126,7 @@ class Usuarios extends BaseController{
         
         $mensaje = session('mensaje');
 
-        if(session('type') == 'Administrador'){ 
+        if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ 
 
         echo view("layout/header");
         echo view("layout/aside");
@@ -172,7 +172,7 @@ class Usuarios extends BaseController{
         $datos = ["datos" => $respuesta,
         "mensaje"  => $mensaje];
 
-        if(session('type') == 'Administrador'){ 
+        if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ 
 
         echo view("layout/header");
         echo view("layout/aside");

@@ -72,6 +72,8 @@ $routes->get('/ventas', 'Ventas::index', ['filter'  => \App\Filters\SessionAdmin
 $routes->post('/buscar', 'Buscar::index');
 $routes->post('/buscarusuario', 'Buscar::usuario');
 $routes->post('/buscarcar', 'Buscar::indexdos');
+$routes->get('/merma', 'Ventas::perdidas', ['filter'  => \App\Filters\SessionAdmin::class]);
+
 
 
 

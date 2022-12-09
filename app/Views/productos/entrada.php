@@ -74,7 +74,7 @@ $compra  = $datos[0]['compra'];
                     <div class="input-group-prepend ">
                         <span class="input-group-text"><i class="ion ion-ios-cart"></i></span>
                     </div>
-                        <input type="number" class="form-control" name="compraEntrada" value="<?=$compra?>">
+                        <input  step="any" type="number" class="form-control" name="compraEntrada" value="<?=$compra?>">
                         
                 </div>
 

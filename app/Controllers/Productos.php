@@ -77,7 +77,7 @@ class Productos extends BaseController{
 
         $mensaje = session('mensaje');
 
-        if(session('type') == 'Administrador'){ 
+        if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ 
         $data = array("productos" => $this->ProductosModels->getProductos(),
                       "categorias" => $this->CategoriasModels->getCategorias(),
                         "mensaje" => $mensaje);
@@ -134,7 +134,7 @@ class Productos extends BaseController{
         "categorias" => $this->CategoriasModels->getCategorias(),
         "mensaje"   => $mensaje];
 
-        if(session('type') == 'Administrador'){ 
+        if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ 
         echo view("layout/header");
         echo view("layout/aside");
         echo view("productos/editarproducto", $datos);

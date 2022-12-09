@@ -17,7 +17,7 @@ class Categorias extends BaseController{
                     "mensaje" => $mensaje
                     );
 
-        if(session('type') == 'Administrador'){ 
+        if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){ 
         echo view("layout/header");
         echo view("layout/aside");
         echo view("categorias/categorias", $data);
@@ -53,7 +53,7 @@ class Categorias extends BaseController{
 
         $mensaje = session('mensaje');
        
-        if(session('type') == 'Administrador'){
+        if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){
         $vistas = view('layout/header').
         view('layout/aside').
         view("categorias/agregarCategoria", ["mensaje" => $mensaje]).
@@ -96,7 +96,7 @@ class Categorias extends BaseController{
         $datos = ["datos" => $respuesta,
         "mensaje"  => $mensaje];
 
-        if(session('type') == 'Administrador'){
+        if(session('type') == 'Administrador' OR session('type') == 'Tecnico'){
         echo view("layout/header");
         echo view("layout/aside");
         echo view("categorias/editarcategoria", $datos);
