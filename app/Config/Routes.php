@@ -39,7 +39,6 @@ $routes->get('/', 'Home::index');
 $routes->post('/login', 'Home::login');
 $routes->post('/register', 'Home::register');
 $routes->get('/registrate', 'Home::registro');
-$routes->get('/salir', 'Home::logout');
 $routes->add('/inicio', 'Home::dashboard',['filter'  => \App\Filters\SessionAdmin::class]);
 $routes->get('/categorias', 'Categorias::index', ['filter'  => \App\Filters\SessionAdmin::class]);
 $routes->get('/agregar-categoria', 'Categorias::agregarCategoria', ['filter'  => \App\Filters\SessionAdmin::class]);
@@ -73,6 +72,7 @@ $routes->post('/buscar', 'Buscar::index');
 $routes->post('/buscarusuario', 'Buscar::usuario');
 $routes->post('/buscarcar', 'Buscar::indexdos');
 $routes->get('/merma', 'Ventas::perdidas', ['filter'  => \App\Filters\SessionAdmin::class]);
+$routes->get('/salir', 'Home::logout');
 
 
 
